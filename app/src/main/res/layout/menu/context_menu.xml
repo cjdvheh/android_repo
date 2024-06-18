@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/delete"
+        android:title="삭제" />
+    <item
+        android:id="@+id/lock"
+        android:title="잠금" />
+    <item
+        android:id="@+id/find"
+        android:title="즐겨찾기"/>
+    <item
+        android:id="@+id/copy"
+        android:title="복사본 생성"/>
+</menu>
