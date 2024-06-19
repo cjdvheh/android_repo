@@ -33,6 +33,11 @@ public class ListItemAdapter extends BaseAdapter {
         return i;
     }
 
+    public void setListItems(ArrayList<Memo> memos) {
+        this.items = memos;
+        notifyDataSetChanged(); // 데이터 변경을 알리는 메서드 호출
+    }
+
     @Override
     public View getView(int i, View converView, ViewGroup parent) {
         context = parent.getContext();
@@ -53,6 +58,7 @@ public class ListItemAdapter extends BaseAdapter {
             title.setTextColor(Color.LTGRAY);
             date.setTextColor(Color.LTGRAY);
         }
+
         if (memo.getIsfind()) {
             title.setBackgroundColor(Color.YELLOW);
             date.setBackgroundColor(Color.YELLOW);

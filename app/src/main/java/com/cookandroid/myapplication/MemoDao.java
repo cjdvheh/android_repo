@@ -24,10 +24,26 @@ public interface MemoDao {
     @Query("select * from Memo")
     List<Memo> getAllMemo();
 
+    @Query("SELECT * FROM Memo ORDER BY date ASC")
+    List<Memo> getAllMemoOrderByDateAsc();
+
+    @Query("SELECT * FROM Memo ORDER BY date DESC")
+    List<Memo> getAllMemoOrderByDateDesc();
+
+    @Query("SELECT * FROM Memo ORDER BY title ASC")
+    List<Memo> getAllMemoOrderByTitleAsc();
+
+    @Query("SELECT * FROM Memo ORDER BY title DESC")
+    List<Memo> getAllMemoOrderByTitleDesc();
+
     @Query("DELETE FROM Memo WHERE id = :id")
     void deleteMemoById(int id);
 
     @Query("Select count(*) from Memo")
     int countMemo();
+
+    @Query("SELECT * FROM Memo WHERE title LIKE '%' || :query || '%' OR content LIKE '%' || :query || '%'")
+    List<Memo> searchMemos(String query);
+
 
 }
